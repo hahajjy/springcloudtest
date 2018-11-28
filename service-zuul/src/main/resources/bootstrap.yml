@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    config:
+      fail-fast: true
+      profile: dev
+      label: master
+      discovery:
+        service-id: cloud-configure
+        enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}

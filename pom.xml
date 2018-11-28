@@ -25,6 +25,7 @@
         <module>service-ribbon</module>
         <module>service-feign</module>
         <module>service-zuul</module>
+        <module>cloud-configure</module>
     </modules>
 
     <properties>
