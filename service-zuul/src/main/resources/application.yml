@@ -7,6 +7,13 @@ server:
 spring:
   application:
     name: service-zuul
+
+management:
+  endpoint:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
 #zuul:
 #  routes:
 #    api-a:

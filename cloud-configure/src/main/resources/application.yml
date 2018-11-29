@@ -2,8 +2,6 @@ server:
   port: 8887
 
 spring:
-  application:
-    name: @pom.artifactId@
   cloud:
      config:
        server:
@@ -11,6 +9,17 @@ spring:
            uri: https://github.com/hahajjy/jjy-config.git
            search-paths: java-config
        label: master
+     bus:
+       trace:
+         enabled: true
+       enabled: true
+  application:
+    name: @pom.artifactId@
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
 eureka:
   client:
     serviceUrl:
@@ -18,3 +27,10 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${server.port}
+management:
+  endpoint:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+
