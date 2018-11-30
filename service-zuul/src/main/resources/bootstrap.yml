@@ -10,7 +10,7 @@ spring:
       profile: dev
       label: master
       discovery:
-        service-id: cloud-configure
+        service-id: service-configure
         enabled: true
 
 eureka:
